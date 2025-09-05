@@ -1,0 +1,274 @@
+#form input[type="text"],
+#form input[type="number"] {
+  background: rgba(0,0,0,0.15);
+  color: #fff;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 10px;
+  margin-bottom: 0;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+#form input[type="text"]:focus,
+#form input[type="number"]:focus {
+  background: rgba(0,0,0,0.22);
+  outline: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+#nome-lista {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 14px 10px 14px 38px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.18rem;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\'><text x=\'0\' y=\'20\' font-size=\'20\'>🛒</text></svg>');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.campo-produto-autocomplete {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#produto {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+#sugestoes-produto {
+  position: absolute;
+  z-index: 10;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.97);
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+#sugestoes-produto li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#sugestoes-produto li:hover {
+  background: #333;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 8px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding: 0 2px;
+}
+
+
+form input[type="number"] {
+  width: 110px;
+  min-width: 80px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+}
+
+.btn-baixar {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px 32px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.05rem;
+  margin: 18px auto 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: block;
+  width: fit-content;
+  min-width: 160px;
+  letter-spacing: 0.5px;
+}
+
+.btn-baixar:hover {
+  transform: scale(1.07);
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+
+.btn-reiniciar {
+  background: linear-gradient(135deg,#232526,#414345) !important;
+  margin-top: 10px;
+}
+.btn-small.aumentar {
+  background: #28a745;
+}
+
+.btn-small.aumentar:hover {
+  background: #218838;
+  transform: scale(1.1);
+}
+
+.btn-small.diminuir {
+  background: #ff9800;
+}
+
+.btn-small.diminuir:hover {
+  background: #e65100;
+  transform: scale(1.1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  padding: 20px;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.btn-baixar {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px 32px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.05rem;
+  margin: 18px auto 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: block;
+  width: fit-content;
+  min-width: 160px;
+  letter-spacing: 0.5px;
+}
+
+.btn-baixar:hover {
+  transform: scale(1.07);
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+
+
+form button {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  margin-left: auto;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.25);
+  padding: 12px 15px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-3px);
+}
+
+li.comprado span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.btn-small {
+  margin-left: 5px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.btn-small.comprar {
+  background: #28a745;
+}
+
+.btn-small.comprar:hover {
+  background: #218838;
+  transform: scale(1.1);
+}
+
+.btn-small.remover {
+  background: #dc3545;
+}
+
+.btn-small.remover:hover {
+  background: #b52a37;
+  transform: scale(1.1);
+}
