@@ -156,6 +156,34 @@ function renderizar() {
 }
 
 // Adicionar item
+// (Removido: submit duplicado)
+
+// Inicializar
+const btnBaixar = document.getElementById('baixar-lista');
+
+function atualizarVisibilidadeBotaoBaixar() {
+  const nomeLista = document.getElementById('nome-lista').value.trim();
+  // Verifica se há pelo menos 1 item com nome, quantidade e valor válidos
+  const listaValida = compras.some(item => item.produto && item.quantidade > 0 && item.preco > 0);
+  if (nomeLista && listaValida) {
+    btnBaixar.style.display = '';
+    btnBaixar.disabled = false;
+  } else {
+    btnBaixar.style.display = 'none';
+    btnBaixar.disabled = true;
+  }
+}
+
+// Atualiza ao digitar o nome da lista
+document.getElementById('nome-lista').addEventListener('input', atualizarVisibilidadeBotaoBaixar);
+
+// Atualiza ao renderizar a lista
+function renderizarComBotao() {
+  renderizar();
+  atualizarVisibilidadeBotaoBaixar();
+}
+
+// Substitui renderizar por renderizarComBotao nos lugares necessários
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -163,18 +191,36 @@ form.addEventListener('submit', (e) => {
   const quantidade = parseInt(document.getElementById('quantidade').value);
   const preco = parseFloat(document.getElementById('preco').value);
 
-  if (!produto || isNaN(quantidade) || isNaN(preco)) {
-    alert('Preencha corretamente os campos!');
+
+
+  // Só adiciona se todos os campos estiverem preenchidos (não vazios)
+  const campoQuantidade = document.getElementById('quantidade').value;
+  const campoPreco = document.getElementById('preco').value;
+  let mensagem = '';
+  if (!produto) mensagem = 'Preencha o campo Produto.';
+  else if (campoQuantidade === '') mensagem = 'Preencha o campo Quantidade.';
+  else if (campoPreco === '') mensagem = 'Preencha o campo Preço.';
+  if (mensagem) {
+    alert(mensagem);
     return;
   }
 
   compras.push({ produto, quantidade, preco, comprado: false });
   salvarPrecoProduto(produto, preco); // Salva o preço unitário para sugestão futura
   salvar();
-  renderizar();
+  renderizarComBotao();
   form.reset();
 });
+
+// Atualiza renderizar nos botões de aumentar/diminuir/remover
+// (substitua renderizar() por renderizarComBotao() dentro da função renderizar)
+const renderizarOriginal = renderizar;
+renderizar = function() {
+  renderizarOriginal();
+  atualizarVisibilidadeBotaoBaixar();
+};
 
 // Inicializar
 renderizar();
 calcularTotal();
+atualizarVisibilidadeBotaoBaixar();

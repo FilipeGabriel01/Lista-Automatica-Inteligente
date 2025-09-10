@@ -12,6 +12,14 @@
   transition: background 0.2s, box-shadow 0.2s;
 }
 
+/* Melhora a visibilidade do placeholder dos campos de texto e número */
+#form input[type="text"]::placeholder,
+#form input[type="number"]::placeholder,
+#nome-lista::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
 #form input[type="text"]:focus,
 #form input[type="number"]:focus {
   background: rgba(0,0,0,0.22);
